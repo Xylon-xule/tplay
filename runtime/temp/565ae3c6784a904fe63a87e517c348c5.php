@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"F:\phpStudy\WWW\tplay\public/../app/admin\view\main\index.html";i:1534925631;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"F:\phpStudy\WWW\tplay\public/../app/admin\view\main\index.html";i:1535003296;}*/ ?>
 <!DOCTYPE html>
 <html>
   <head>
