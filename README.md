@@ -15,6 +15,8 @@ Tplay 1.3.3
 
 5.微调控制台的布局
 
+6.优化超管和普通管理员的权限
+
 Tplay 1.3.2 恭贺新春版
 ===============
 
@@ -165,10 +167,10 @@ www  WEB部署目录（或者子目录）
 
 ## 安装使用
 
-1. 首先克隆下载应用项目仓库（或者直接下载最新[发布版本包](https://github.com/tingyuu/tplay/releases)）
+1. 首先克隆下载应用项目仓库（或者直接下载最新[发布版本包](https://github.com/Xylon-xule/tplay/releases)）
     
     ```bash
-    git clone https://github.com/tingyuu/tplay.git
+    git clone https://github.com/Xylon-xule/tplay.git
     ```
 2. 然后切换到`tplay`目录下面，再使用`composer`自动安装更新依赖库
 
@@ -184,7 +186,7 @@ www  WEB部署目录（或者子目录）
 
 5. 将你的域名指向根目录下的public目录（重要）,详情请看这里 [服务环境部署](#服务环境部署)
 
-6. 浏览器访问：`你的域名/admin`，默认管理员账户：`admin` 密码：`tplay`
+6. 浏览器访问：`你的域名/admin`，默认管理员账户：`administrator` 密码：`admin`
 
 7. 如果你用到了短信配置，请前往阿里大鱼官网申请下载自己的sdk文件，替换/extend/dayu下的文件，在后台配置自己的appkey即可
 
