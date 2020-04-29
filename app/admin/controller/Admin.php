@@ -44,12 +44,7 @@ class Admin extends Permissions
         }
         
         $admin = empty($where) ? $model->order('create_time desc')->paginate(20) : $model->where($where)->order('create_time desc')->paginate(20,false,['query'=>$this->request->param()]);
-        //验证是否是超管,如果不是则隐藏超管
-        $jur = session::get('admin');
-        if($jur !== 1){
-            unset($admin['1']);
-        }
-        $this->assign('jur',$jur);
+        
         $this->assign('admin',$admin);
         $info['cate'] = Db::name('admin_cate')->select();
         $this->assign('info',$info);
@@ -136,12 +131,7 @@ class Admin extends Permissions
     		} else {
     			//非提交操作
     			$info['admin'] = $model->where('id',$id)->find();
-                $info['admin_cate'] = Db::name('admin_cate')->select();
-                //验证是否是超管,如果不是则隐藏超管
-                $jur = session::get('admin');
-                if($jur !== 1){
-                    unset($info['admin_cate']['0']);
-                }
+    			$info['admin_cate'] = Db::name('admin_cate')->select();
     			$this->assign('info',$info);
     			return $this->fetch();
     		}
@@ -181,13 +171,7 @@ class Admin extends Permissions
 	            }
     		} else {
     			//非提交操作
-                $info['admin_cate'] = Db::name('admin_cate')->select();
-                //验证是否是超管,如果不是则隐藏超管
-                $jur = session::get('admin');
-                if($jur !== 1){
-                    unset($info['admin_cate']['0']);
-                }
-    			$this->assign('info',$info);
+    			$info['admin_cate'] = Db::name('admin_cate')->select();
     			$this->assign('info',$info);
     			return $this->fetch();
     		}
@@ -279,11 +263,7 @@ class Admin extends Permissions
         }
         
         $cate = empty($where) ? $model->order('create_time desc')->paginate(20) : $model->where($where)->order('create_time desc')->paginate(20,false,['query'=>$this->request->param()]);
-        //验证是否是超管,如果不是则隐藏超管,这里为倒叙,这个权限组只有超管可以修改,添加过后就得修改隐藏下标
-        $jur = session::get('admin');
-        if($jur !== 1){
-            unset($cate['2']);
-        }
+        
     	$this->assign('cate',$cate);
     	return $this->fetch();
 
